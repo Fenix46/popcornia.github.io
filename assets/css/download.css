@@ -1,0 +1,774 @@
+/* Download Page Specific Styles */
+
+.download-page {
+    background: var(--tv-bg);
+    min-height: 100vh;
+    color: var(--text-light);
+}
+
+/* Anti-AdBlock Overlay */
+.adb-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.adb-overlay.hidden {
+    display: none;
+}
+
+.adb-content {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    max-width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.adb-content i {
+    font-size: 4rem;
+    color: #e74c3c;
+    margin-bottom: 30px;
+}
+
+.adb-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.adb-content p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Enhanced Ad Banners */
+.ad-banner-large {
+    background: var(--dark-gradient);
+    border-radius: var(--border-radius);
+    margin: 20px auto;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    max-width: 1200px;
+    min-height: 120px;
+}
+
+.ad-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-gradient);
+    color: var(--text-light);
+    font-weight: bold;
+    position: relative;
+    min-height: 120px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.ad-content {
+    text-align: center;
+}
+
+.ad-content i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ad-size {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 5px;
+}
+
+/* Download Header */
+.download-header {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.back-btn:hover {
+    background: var(--primary-gradient);
+    transform: translateX(-5px);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.app-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.app-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--success-gradient);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.app-details h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.app-meta {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.app-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+}
+
+.app-meta i {
+    color: #4facfe;
+}
+
+/* Main Download Section */
+.download-main {
+    padding: 40px 0;
+}
+
+.ad-section {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    padding: 50px 40px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.ad-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ad-section p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+}
+
+#countdown {
+    color: #4facfe;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Ads Grid */
+.ads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.ad-rectangle-1,
+.ad-rectangle-2 {
+    background: var(--dark-gradient);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    min-height: 250px;
+}
+
+/* Countdown Timer */
+.countdown-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.countdown-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.countdown-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.countdown-svg {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg);
+}
+
+.countdown-svg circle {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+}
+
+#countdown-path {
+    stroke: url(#gradient);
+    stroke-dashoffset: 0;
+}
+
+.countdown-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.countdown-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--success-gradient);
+    border-radius: 6px;
+    width: 0%;
+    transition: width 1s linear;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: progress-shimmer 2s infinite;
+}
+
+@keyframes progress-shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+#countdown-message {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Video Ad Section */
+.video-ad-container {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    margin: 40px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-ad-container h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.video-ad-container p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.video-ad-placeholder {
+    background: var(--dark-gradient);
+    border-radius: var(--border-radius);
+    min-height: 200px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.btn-video {
+    background: var(--secondary-gradient);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(245, 87, 108, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-video:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(245, 87, 108, 0.6);
+}
+
+/* Download Ready Section */
+.download-ready {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    padding: 60px 40px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 40px 0;
+    transition: all 0.5s ease;
+}
+
+.download-ready.hidden {
+    display: none;
+}
+
+.download-success i {
+    font-size: 5rem;
+    color: #4facfe;
+    margin-bottom: 30px;
+    animation: successPulse 2s infinite;
+}
+
+@keyframes successPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.download-success h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: var(--success-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.download-success p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+}
+
+/* Download Button */
+.download-button-container {
+    margin: 40px 0;
+}
+
+.btn-download {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: var(--success-gradient);
+    color: white;
+    padding: 30px 50px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 35px rgba(79, 172, 254, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-download:hover::before {
+    left: 100%;
+}
+
+.btn-download:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(79, 172, 254, 0.6);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-download i {
+    font-size: 2rem;
+}
+
+.btn-download small {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+/* Post Download Ad */
+.post-download-ad {
+    margin: 40px 0;
+    background: var(--dark-gradient);
+    border-radius: var(--border-radius);
+    min-height: 100px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+/* Installation Guide */
+.installation-guide {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    padding: 50px 40px;
+    margin: 40px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.installation-guide h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.instruction-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.instruction-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    border-left: 4px solid transparent;
+    border-image: var(--primary-gradient) 1;
+    transition: all 0.3s ease;
+}
+
+.instruction-step:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.step-content p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.settings-path {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-family: monospace;
+}
+
+.path-step {
+    background: var(--success-gradient);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Troubleshooting */
+.troubleshooting {
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.troubleshooting h3 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #e74c3c;
+}
+
+.trouble-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.trouble-item {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border-left: 4px solid #e74c3c;
+}
+
+.trouble-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.trouble-item i {
+    color: #e74c3c;
+    margin-right: 10px;
+}
+
+.trouble-item p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Bottom Ads */
+.bottom-ads {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.bottom-ads .ad-placeholder {
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 100px;
+}
+
+/* Sticky Ad Footer */
+.sticky-ad-download {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark-gradient);
+    min-height: 80px;
+    z-index: 1000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Download Footer */
+.download-footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-light);
+    margin-top: 80px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.footer-links a:hover {
+    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design for Download Pages */
+@media (max-width: 768px) {
+    .app-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .app-details h1 {
+        font-size: 2rem;
+    }
+    
+    .app-meta {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .ads-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .countdown-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .countdown-text {
+        text-align: center;
+    }
+    
+    .instruction-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .settings-path {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .btn-download {
+        padding: 25px 40px;
+        font-size: 1.1rem;
+    }
+    
+    .ad-section {
+        padding: 30px 20px;
+    }
+    
+    .installation-guide {
+        padding: 30px 20px;
+    }
+    
+    .sticky-ad-download {
+        position: relative;
+        margin-top: 30px;
+    }
+}
+
+/* Loading shimmer animation for ads */
+.loading::after {
+    animation-duration: 1.5s;
+}
+
+/* Focus states for TV navigation */
+.btn-download:focus,
+.btn-video:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 3px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .ad-placeholder {
+        border-width: 3px;
+        border-style: solid;
+    }
+    
+    .instruction-step {
+        border-left-width: 6px;
+    }
+    
+    .trouble-item {
+        border-left-width: 6px;
+    }
+}

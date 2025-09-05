@@ -1,0 +1,1094 @@
+/* Instructions Page Specific Styles */
+
+.instructions-page {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    color: var(--text-light);
+}
+
+/* Header */
+.instructions-header {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.header-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header-text p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Device Selector */
+.device-selector {
+    text-align: center;
+}
+
+.device-selector h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.device-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.device-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 12px 20px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.device-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.device-btn.active {
+    background: var(--primary-gradient);
+    border-color: transparent;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.device-btn i {
+    font-size: 1.2rem;
+}
+
+/* Video Section */
+.video-section {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    margin: 40px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.video-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    background: var(--secondary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.video-placeholder {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 400px;
+}
+
+.video-placeholder i {
+    font-size: 5rem;
+    color: #4facfe;
+    margin-bottom: 20px;
+    animation: playButtonPulse 2s infinite;
+}
+
+@keyframes playButtonPulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+.video-placeholder h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.video-placeholder p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.video-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Post Video Ad */
+.post-video-ad {
+    margin: 40px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Device Instructions */
+.device-instructions {
+    display: none;
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    margin: 40px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    animation: deviceFadeIn 0.5s ease-out;
+}
+
+.device-instructions.active {
+    display: block;
+}
+
+@keyframes deviceFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Device Header */
+.device-header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.device-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--success-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    margin: 0 auto 25px;
+    box-shadow: var(--shadow);
+}
+
+.device-header h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.device-header p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Prerequisites Section */
+.prerequisites-section {
+    padding: 50px 40px;
+    background: rgba(79, 172, 254, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.prerequisites-section h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.prerequisites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.prereq-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.prereq-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.prereq-card i {
+    font-size: 2.5rem;
+    color: #4facfe;
+    margin-bottom: 20px;
+}
+
+.prereq-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.prereq-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Step by Step Guide */
+.step-by-step {
+    padding: 50px 40px;
+}
+
+.step-by-step h3 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    background: var(--success-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Instruction Steps */
+.instruction-step {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.instruction-step:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: rgba(79, 172, 254, 0.3);
+}
+
+.step-header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.step-header h4 {
+    font-size: 1.5rem;
+    color: var(--text-light);
+}
+
+.step-content {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.step-text p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.step-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.step-text li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.step-text li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #4facfe;
+    font-size: 0.8rem;
+}
+
+.step-text strong {
+    color: #4facfe;
+    font-weight: 600;
+}
+
+/* Settings Path */
+.settings-path {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-family: monospace;
+    color: #4facfe;
+    border-left: 4px solid #4facfe;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Code Example */
+.code-example {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+.code-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.code-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Courier New', monospace;
+    background: var(--success-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Quick Links in Steps */
+.quick-links {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.btn-quick-link {
+    background: var(--success-gradient);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.btn-quick-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(79, 172, 254, 0.6);
+}
+
+/* Visual Elements */
+.step-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screenshot-placeholder {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.screenshot-placeholder i {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 15px;
+}
+
+.screenshot-placeholder p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Downloader Simulation */
+.downloader-simulation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.downloader-interface {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 300px;
+}
+
+.downloader-interface .app-header {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.url-field {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.url-field input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.url-field button {
+    background: var(--success-gradient);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Success Message */
+.success-message {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.success-message i {
+    font-size: 2rem;
+    color: #22c55e;
+}
+
+.success-message p {
+    color: #22c55e;
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Mid Steps Ad */
+.mid-steps-ad {
+    margin: 40px 0;
+    text-align: center;
+}
+
+/* Note Box */
+.note-box {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.note-box i {
+    font-size: 1.5rem;
+    color: #f59e0b;
+    flex-shrink: 0;
+}
+
+.note-box p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Reference Link */
+.reference-link {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.reference-link a {
+    color: #4facfe;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.reference-link a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Android Versions */
+.android-versions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.version-card {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.version-card h5 {
+    color: #4facfe;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Troubleshooting Section */
+.troubleshooting-section {
+    background: rgba(231, 76, 60, 0.05);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    margin: 40px 0;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.troubleshooting-section h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #e74c3c;
+}
+
+.troubleshooting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.trouble-card {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 25px;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    transition: all 0.3s ease;
+}
+
+.trouble-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.2);
+    background: rgba(231, 76, 60, 0.05);
+}
+
+.trouble-icon {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.trouble-icon i {
+    font-size: 2.5rem;
+    color: #e74c3c;
+}
+
+.trouble-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.trouble-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Troubleshooting List */
+.troubleshooting-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.trouble-item {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 25px;
+    border-left: 4px solid #e74c3c;
+    transition: all 0.3s ease;
+}
+
+.trouble-item:hover {
+    background: rgba(231, 76, 60, 0.05);
+    transform: translateX(5px);
+}
+
+.trouble-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.trouble-item h4 i {
+    color: #e74c3c;
+}
+
+.trouble-item p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Pre FAQ Ads */
+.pre-faq-ads {
+    margin: 60px 0;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+}
+
+.pre-faq-ads .ads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    padding: 50px 40px;
+    margin: 40px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.faq-question {
+    padding: 25px 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-question h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-light);
+}
+
+.faq-question i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    color: #4facfe;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 400px;
+    padding: 25px 30px;
+}
+
+.faq-answer p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+}
+
+.faq-answer ul {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.faq-answer li {
+    margin-bottom: 8px;
+}
+
+/* Bottom Ads */
+.bottom-ads {
+    margin: 60px 0;
+    text-align: center;
+}
+
+/* Quick Links Section */
+.quick-links-section {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    padding: 50px 40px;
+    margin: 60px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quick-links-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    background: var(--success-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.quick-link-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border-color: rgba(79, 172, 254, 0.5);
+    background: rgba(79, 172, 254, 0.1);
+}
+
+.quick-link-card i {
+    font-size: 2.5rem;
+    color: #4facfe;
+    margin-bottom: 20px;
+}
+
+.quick-link-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.quick-link-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Footer */
+.instructions-footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-light);
+    margin-top: 80px;
+}
+
+.instructions-footer .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.instructions-footer .footer-section h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.instructions-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.instructions-footer ul li {
+    margin-bottom: 8px;
+}
+
+.instructions-footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.instructions-footer a:hover {
+    color: var(--text-light);
+}
+
+/* Responsive Design for Instructions Page */
+@media (max-width: 768px) {
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .header-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .device-buttons {
+        justify-content: center;
+    }
+    
+    .device-btn {
+        min-width: 100px;
+    }
+    
+    .step-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .step-text {
+        order: 1;
+    }
+    
+    .step-visual {
+        order: 2;
+    }
+    
+    .prerequisites-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .troubleshooting-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .android-versions {
+        grid-template-columns: 1fr;
+    }
+    
+    .quick-links-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pre-faq-ads .ads-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .instructions-footer .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .device-header h2 {
+        font-size: 2rem;
+    }
+    
+    .step-by-step h3,
+    .faq-section h2,
+    .quick-links-section h2 {
+        font-size: 2rem;
+    }
+    
+    .code-number {
+        font-size: 2rem;
+    }
+    
+    .downloader-interface {
+        max-width: 100%;
+    }
+    
+    .url-field {
+        flex-direction: column;
+    }
+    
+    .url-field input,
+    .url-field button {
+        width: 100%;
+    }
+    
+    .breadcrumb {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* Focus styles for TV navigation */
+.device-btn:focus,
+.btn-quick-link:focus,
+.quick-link-card:focus,
+.faq-question:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 3px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .instruction-step,
+    .prereq-card,
+    .trouble-card,
+    .faq-item {
+        border-width: 2px;
+    }
+    
+    .note-box,
+    .success-message {
+        border-width: 2px;
+    }
+    
+    .version-card,
+    .trouble-item {
+        border-left-width: 6px;
+    }
+}

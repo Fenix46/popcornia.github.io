@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codice Downloader per FireStick/Android TV - MiaApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/download.css">
+    <link rel="stylesheet" href="assets/css/firestick.css">
+</head>
+<body class="firestick-page">
+    <!-- Anti-AdBlock Detection -->
+    <div id="adb-overlay" class="adb-overlay hidden">
+        <div class="adb-content">
+            <i class="fas fa-shield-alt"></i>
+            <h2>AdBlock Rilevato</h2>
+            <p>Per ottenere gratuitamente il codice Downloader, ti chiediamo di disabilitare AdBlock per questo sito.</p>
+            <p>Questo ci aiuta a mantenere il servizio gratuito per tutti.</p>
+            <button onclick="checkAdBlock()" class="btn btn-primary">Ho Disabilitato AdBlock</button>
+        </div>
+    </div>
+
+    <!-- Top Ad Banner -->
+    <div id="top-ad-banner-1" class="ad-banner-large">
+        <div class="ad-placeholder loading">
+            <div class="ad-content">
+                <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                <span class="ad-size">728x90 - Top Banner</span>
+            </div>
+            <!-- INSERISCI QUI IL TUO CODICE BANNER 728x90 -->
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="firestick-header">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Torna alla Home
+            </a>
+            <div class="header-content">
+                <div class="app-info">
+                    <div class="app-icon tv-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <div class="app-details">
+                        <h1>Codice Downloader</h1>
+                        <div class="app-meta">
+                            <span><i class="fas fa-fire"></i> Per FireStick & Android TV</span>
+                            <span><i class="fas fa-download"></i> Sistema AFTVNews Downloader</span>
+                            <span><i class="fas fa-clock"></i> Valido 1 Ora</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="firestick-main">
+        <div class="container">
+            <!-- Step 1: Pre-Generation Ads -->
+            <div id="step-1" class="generation-step active">
+                <div class="step-header">
+                    <div class="step-indicator">
+                        <span class="step-number">1</span>
+                        <span class="step-title">Preparazione Codice</span>
+                    </div>
+                    <div class="step-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-content">
+                    <h2><i class="fas fa-cogs"></i> Stiamo Preparando il Tuo Codice</h2>
+                    <p>Il sistema sta generando un codice univoco per la tua installazione. Attendi qualche secondo...</p>
+                    
+                    <!-- Multiple Ad Sections -->
+                    <div class="ads-section">
+                        <h3>Mentre attendi, dai un'occhiata a questi contenuti:</h3>
+                        <div class="ads-grid">
+                            <div class="ad-rectangle">
+                                <div class="ad-placeholder loading">
+                                    <div class="ad-content">
+                                        <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                        <span class="ad-size">300x250 - Rectangle 1</span>
+                                    </div>
+                                    <!-- INSERISCI QUI CODICE RECTANGLE 300x250 #1 -->
+                                </div>
+                            </div>
+                            
+                            <div class="ad-rectangle">
+                                <div class="ad-placeholder loading">
+                                    <div class="ad-content">
+                                        <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                        <span class="ad-size">300x250 - Rectangle 2</span>
+                                    </div>
+                                    <!-- INSERISCI QUI CODICE RECTANGLE 300x250 #2 -->
+                                </div>
+                            </div>
+
+                            <div class="ad-rectangle">
+                                <div class="ad-placeholder loading">
+                                    <div class="ad-content">
+                                        <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                        <span class="ad-size">300x250 - Rectangle 3</span>
+                                    </div>
+                                    <!-- INSERISCI QUI CODICE RECTANGLE 300x250 #3 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="continue-section">
+                        <button onclick="goToStep2()" class="btn-continue">
+                            <i class="fas fa-arrow-right"></i>
+                            Continua al Passo 2
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Timer with More Ads -->
+            <div id="step-2" class="generation-step">
+                <div class="step-header">
+                    <div class="step-indicator">
+                        <span class="step-number">2</span>
+                        <span class="step-title">Generazione in Corso</span>
+                    </div>
+                    <div class="step-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-content">
+                    <h2><i class="fas fa-sync-alt fa-spin"></i> Generando Codice...</h2>
+                    <p>Il codice sarà pronto tra <span id="generation-countdown">10</span> secondi</p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="countdown-container">
+                        <div class="countdown-circle">
+                            <div class="countdown-number" id="countdown-display-2">10</div>
+                            <svg class="countdown-svg">
+                                <circle cx="75" cy="75" r="70" id="countdown-path-2"></circle>
+                            </svg>
+                        </div>
+                        <div class="generation-info">
+                            <h3>Connessione al Server AFTVNews...</h3>
+                            <div class="generation-status">
+                                <div class="status-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Verifica URL APK</span>
+                                </div>
+                                <div class="status-item">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                    <span>Generazione codice univoco</span>
+                                </div>
+                                <div class="status-item pending">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Validazione finale</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More Ads During Wait -->
+                    <div class="wait-ads">
+                        <div class="banner-ad">
+                            <div class="ad-placeholder loading">
+                                <div class="ad-content">
+                                    <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                    <span class="ad-size">728x90 - Wait Banner</span>
+                                </div>
+                                <!-- INSERISCI QUI CODICE BANNER WAIT -->
+                            </div>
+                        </div>
+                        
+                        <div class="interstitial-ad">
+                            <div class="ad-placeholder loading">
+                                <div class="ad-content">
+                                    <p><i class="fas fa-video"></i> VIDEO PUBBLICITÀ</p>
+                                    <span class="ad-size">Video/Interstitial</span>
+                                </div>
+                                <!-- INSERISCI QUI CODICE VIDEO/INTERSTITIAL AD -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Code Generation System -->
+            <div id="step-3" class="generation-step">
+                <div class="step-header">
+                    <div class="step-indicator">
+                        <span class="step-number">3</span>
+                        <span class="step-title">Sistema di Generazione</span>
+                    </div>
+                    <div class="step-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-content">
+                    <h2><i class="fas fa-code"></i> Generazione Codice Downloader</h2>
+                    <p>Selezioniamo il metodo migliore per generare il tuo codice...</p>
+                    
+                    <div class="generation-methods">
+                        <!-- Method A: iframe submission -->
+                        <div class="method-card" id="method-a">
+                            <div class="method-header">
+                                <i class="fas fa-magic"></i>
+                                <h3>Metodo A - Automatico</h3>
+                                <span class="status-badge trying">Tentativo in corso...</span>
+                            </div>
+                            <p>Generazione automatica tramite server AFTVNews</p>
+                            <div class="method-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="method-a-progress"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Method B: popup/new tab -->
+                        <div class="method-card" id="method-b">
+                            <div class="method-header">
+                                <i class="fas fa-external-link-alt"></i>
+                                <h3>Metodo B - Popup</h3>
+                                <span class="status-badge standby">In standby...</span>
+                            </div>
+                            <p>Apertura popup AFTVNews (se iframe bloccato)</p>
+                        </div>
+
+                        <!-- Method C: manual fallback -->
+                        <div class="method-card" id="method-c">
+                            <div class="method-header">
+                                <i class="fas fa-hand-paper"></i>
+                                <h3>Metodo C - Manuale</h3>
+                                <span class="status-badge standby">Fallback</span>
+                            </div>
+                            <p>Istruzioni manuali per generare il codice</p>
+                        </div>
+                    </div>
+
+                    <!-- Hidden iframe for method A -->
+                    <iframe id="downloader-iframe" name="downloader_frame" style="display: none;" sandbox="allow-forms allow-scripts allow-same-origin"></iframe>
+                </div>
+            </div>
+
+            <!-- Step 4: Code Display -->
+            <div id="step-4" class="generation-step">
+                <div class="step-header">
+                    <div class="step-indicator">
+                        <span class="step-number">4</span>
+                        <span class="step-title">Codice Generato</span>
+                    </div>
+                    <div class="step-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-content">
+                    <div class="code-success">
+                        <i class="fas fa-check-circle"></i>
+                        <h2>Codice Generato con Successo!</h2>
+                        <p>Ecco il tuo codice per l'app Downloader:</p>
+                    </div>
+                    
+                    <!-- Generated Code Display -->
+                    <div class="code-display">
+                        <div class="code-container">
+                            <div class="code-label">Il Tuo Codice Downloader:</div>
+                            <div class="code-number" id="generated-code">12345</div>
+                            <div class="code-actions">
+                                <button onclick="copyCode()" class="btn-copy">
+                                    <i class="fas fa-copy"></i>
+                                    Copia Codice
+                                </button>
+                                <button onclick="generateNewCode()" class="btn-refresh">
+                                    <i class="fas fa-sync-alt"></i>
+                                    Nuovo Codice
+                                </button>
+                            </div>
+                            <div class="code-info">
+                                <span><i class="fas fa-clock"></i> Valido per 1 ora</span>
+                                <span><i class="fas fa-shield-check"></i> Verificato e sicuro</span>
+                            </div>
+                        </div>
+
+                        <!-- QR Code for mobile -->
+                        <div class="qr-code-section">
+                            <h4>Scansiona con il telefono:</h4>
+                            <div class="qr-code" id="qr-code">
+                                <!-- QR Code will be generated here -->
+                            </div>
+                            <p>Scansiona per aprire questa pagina sul telefono</p>
+                        </div>
+                    </div>
+
+                    <!-- Post-Code Ad -->
+                    <div class="post-code-ad">
+                        <div class="ad-placeholder loading">
+                            <div class="ad-content">
+                                <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                <span class="ad-size">728x90 - Post Code</span>
+                            </div>
+                            <!-- INSERISCI QUI CODICE BANNER POST-CODE -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Instructions -->
+            <div id="step-5" class="generation-step">
+                <div class="step-header">
+                    <div class="step-indicator">
+                        <span class="step-number">5</span>
+                        <span class="step-title">Istruzioni d'Uso</span>
+                    </div>
+                </div>
+
+                <div class="step-content">
+                    <h2><i class="fas fa-tv"></i> Come Usare il Codice nel Downloader</h2>
+                    
+                    <div class="animated-instructions">
+                        <div class="instruction-card">
+                            <div class="instruction-animation">
+                                <div class="firestick-remote">
+                                    <div class="remote-body">
+                                        <div class="remote-buttons">
+                                            <div class="nav-pad">
+                                                <div class="nav-button up"></div>
+                                                <div class="nav-button left"></div>
+                                                <div class="nav-button center"></div>
+                                                <div class="nav-button right"></div>
+                                                <div class="nav-button down"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tv-screen">
+                                    <div class="downloader-app">
+                                        <div class="app-header">Downloader</div>
+                                        <div class="input-field">
+                                            <span class="typing-code" id="typing-animation"></span>
+                                            <span class="cursor">|</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="instruction-text">
+                                <h3>1. Apri l'App Downloader</h3>
+                                <p>Sul tuo FireStick o Android TV, naviga e apri l'app Downloader</p>
+                            </div>
+                        </div>
+
+                        <div class="instruction-card">
+                            <div class="instruction-steps">
+                                <div class="step-item">
+                                    <div class="step-icon">
+                                        <i class="fas fa-keyboard"></i>
+                                    </div>
+                                    <div class="step-text">
+                                        <h4>2. Inserisci il Codice</h4>
+                                        <p>Nel campo di ricerca, digita il codice: <strong id="display-code">12345</strong></p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-icon">
+                                        <i class="fas fa-download"></i>
+                                    </div>
+                                    <div class="step-text">
+                                        <h4>3. Premi Download</h4>
+                                        <p>Clicca sul pulsante "Download" o premi OK sul telecomando</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-icon">
+                                        <i class="fas fa-install"></i>
+                                    </div>
+                                    <div class="step-text">
+                                        <h4>4. Installa l'APK</h4>
+                                        <p>Una volta scaricato, premi "Install" per completare l'installazione</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Troubleshooting -->
+                    <div class="troubleshooting-tv">
+                        <h3><i class="fas fa-tools"></i> Risoluzione Problemi</h3>
+                        <div class="trouble-grid">
+                            <div class="trouble-card">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <h4>Codice Non Funziona?</h4>
+                                <p>Il codice potrebbe essere scaduto. Genera un nuovo codice cliccando "Nuovo Codice" sopra.</p>
+                            </div>
+                            <div class="trouble-card">
+                                <i class="fas fa-wifi"></i>
+                                <h4>Problemi di Connessione?</h4>
+                                <p>Verifica che il FireStick sia connesso ad internet e riprova.</p>
+                            </div>
+                            <div class="trouble-card">
+                                <i class="fas fa-download"></i>
+                                <h4>Downloader Non Installato?</h4>
+                                <p>Scarica l'app gratuita "Downloader" dall'App Store del FireStick.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Final Ad Section -->
+                    <div class="final-ads">
+                        <div class="ads-grid">
+                            <div class="ad-placeholder loading">
+                                <div class="ad-content">
+                                    <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                    <span class="ad-size">300x250 - Final 1</span>
+                                </div>
+                            </div>
+                            <div class="ad-placeholder loading">
+                                <div class="ad-content">
+                                    <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                    <span class="ad-size">300x250 - Final 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sticky Ad Footer -->
+    <div id="sticky-ad-footer" class="sticky-ad-firestick">
+        <div class="ad-placeholder">
+            <span><i class="fas fa-ad"></i> PUBBLICITÀ</span>
+            <button class="ad-close" onclick="closeStickyAd()">&times;</button>
+            <!-- INSERISCI QUI CODICE STICKY AD -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="firestick-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">← Torna alla Home</a>
+                <a href="download-android.html">Download Android</a>
+                <a href="get-code.html">Codici Alternativi</a>
+                <a href="instructions.html">Istruzioni Dettagliate</a>
+            </div>
+            <p>&copy; 2024 MiaApp. Sistema Downloader sicuro e gratuito.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.3/qrcode.min.js"></script>
+    <script src="assets/js/ads-monetization.js"></script>
+    <script src="assets/js/downloader-integration.js"></script>
+    <script src="assets/js/firestick-code.js"></script>
+    
+    <script>
+        // Initialize FireStick code generation page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for AdBlock first
+            setTimeout(checkAdBlock, 1000);
+            
+            // Detect if user is on Android TV
+            detectAndroidTV();
+            
+            // Initialize step system
+            initializeStepSystem();
+            
+            // Track page views
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    page_title: 'FireStick Code Generator',
+                    page_location: window.location.href
+                });
+            }
+        });
+
+        // Auto-start process after a few seconds
+        setTimeout(function() {
+            if (!isAdBlockDetected()) {
+                // Automatically progress through steps
+                setTimeout(goToStep2, 5000);
+            }
+        }, 3000);
+    </script>
+</body>
+</html>

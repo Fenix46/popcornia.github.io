@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codici Alternativi Downloader - MiaApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/download.css">
+    <link rel="stylesheet" href="assets/css/alt-codes.css">
+</head>
+<body class="alt-codes-page">
+    <!-- Anti-AdBlock Detection -->
+    <div id="adb-overlay" class="adb-overlay hidden">
+        <div class="adb-content">
+            <i class="fas fa-shield-alt"></i>
+            <h2>AdBlock Rilevato</h2>
+            <p>Per accedere ai codici alternativi gratuiti, disabilita AdBlock per questo sito.</p>
+            <button onclick="checkAdBlock()" class="btn btn-primary">Ho Disabilitato AdBlock</button>
+        </div>
+    </div>
+
+    <!-- Top Ad Banner -->
+    <div id="top-ad-banner" class="ad-banner-large">
+        <div class="ad-placeholder loading">
+            <div class="ad-content">
+                <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                <span class="ad-size">728x90 - Top Banner</span>
+            </div>
+            <!-- INSERISCI QUI IL TUO CODICE BANNER 728x90 -->
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="alt-codes-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="firestick-code.html">Generatore Codici</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Codici Alternativi</span>
+            </nav>
+            
+            <div class="header-content">
+                <div class="header-info">
+                    <div class="header-icon">
+                        <i class="fas fa-list-alt"></i>
+                    </div>
+                    <div class="header-text">
+                        <h1>Codici Alternativi</h1>
+                        <p>Sistema di backup con codici pre-generati aggiornati ogni ora</p>
+                        <div class="last-update">
+                            <i class="fas fa-clock"></i>
+                            <span>Ultimo aggiornamento: <span id="last-update-time">--:--</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="status-indicator">
+                    <div class="status-light" id="status-light"></div>
+                    <span id="status-text">Sistema Attivo</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="alt-codes-main">
+        <div class="container">
+            <!-- Pre-Access Ads Section -->
+            <div id="pre-access-ads" class="ads-section-pre">
+                <h2><i class="fas fa-unlock"></i> Accesso ai Codici</h2>
+                <p>Visualizza queste pubblicità per accedere ai codici gratuiti</p>
+                
+                <!-- Ad Countdown -->
+                <div class="ad-countdown-container">
+                    <div class="countdown-info">
+                        <h3>Caricamento codici in corso...</h3>
+                        <p>Attendere <span id="ad-countdown">5</span> secondi per accedere</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="ad-progress"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multiple Ad Placements -->
+                <div class="pre-access-ads-grid">
+                    <div class="ad-section-1">
+                        <div class="ad-placeholder loading">
+                            <div class="ad-content">
+                                <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                <span class="ad-size">300x250 - Pre Access 1</span>
+                            </div>
+                            <!-- INSERISCI QUI CODICE RECTANGLE 300x250 PRE-ACCESS 1 -->
+                        </div>
+                    </div>
+
+                    <div class="ad-section-2">
+                        <div class="ad-placeholder loading">
+                            <div class="ad-content">
+                                <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                <span class="ad-size">300x250 - Pre Access 2</span>
+                            </div>
+                            <!-- INSERISCI QUI CODICE RECTANGLE 300x250 PRE-ACCESS 2 -->
+                        </div>
+                    </div>
+
+                    <div class="ad-section-3">
+                        <div class="ad-placeholder loading">
+                            <div class="ad-content">
+                                <p><i class="fas ad"></i> PUBBLICITÀ</p>
+                                <span class="ad-size">728x90 - Pre Access Banner</span>
+                            </div>
+                            <!-- INSERISCI QUI CODICE BANNER PRE-ACCESS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Ad Option -->
+                <div class="video-skip-option">
+                    <h4><i class="fas fa-video"></i> Accesso Istantaneo</h4>
+                    <p>Guarda un breve video per accedere immediatamente ai codici</p>
+                    <button onclick="watchVideoForInstantAccess()" class="btn-video-skip">
+                        <i class="fas fa-play"></i>
+                        Guarda Video (Skip Timer)
+                    </button>
+                    <div class="video-ad-container">
+                        <div class="ad-placeholder">
+                            <p><i class="fas fa-video"></i> VIDEO AD</p>
+                            <span>30 secondi</span>
+                            <!-- INSERISCI QUI CODICE VIDEO AD -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Codes Access Section (Initially Hidden) -->
+            <div id="codes-access-section" class="codes-section hidden">
+                <div class="section-header">
+                    <h2><i class="fas fa-key"></i> Codici Disponibili</h2>
+                    <div class="refresh-info">
+                        <button onclick="refreshCodes()" class="btn-refresh-codes">
+                            <i class="fas fa-sync-alt"></i>
+                            Aggiorna Lista
+                        </button>
+                        <span class="next-refresh">Prossimo aggiornamento: <span id="next-refresh">--:--</span></span>
+                    </div>
+                </div>
+
+                <!-- Codes Grid -->
+                <div class="codes-grid" id="codes-grid">
+                    <!-- Codes will be populated by JavaScript -->
+                </div>
+
+                <!-- Mid-Content Ad -->
+                <div class="mid-content-ad">
+                    <div class="ad-placeholder loading">
+                        <div class="ad-content">
+                            <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                            <span class="ad-size">728x90 - Mid Content</span>
+                        </div>
+                        <!-- INSERISCI QUI CODICE BANNER MID-CONTENT -->
+                    </div>
+                </div>
+
+                <!-- Alternative Methods -->
+                <div class="alternative-methods">
+                    <h3><i class="fas fa-tools"></i> Metodi Alternativi</h3>
+                    <div class="methods-grid">
+                        <div class="method-card">
+                            <div class="method-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h4>Link Diretto</h4>
+                            <p>Usa questo link pre-formattato per Downloader:</p>
+                            <div class="direct-link-container">
+                                <input type="text" readonly id="direct-link" value="Loading...">
+                                <button onclick="copyDirectLink()" class="btn-copy-link">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="method-card">
+                            <div class="method-icon">
+                                <i class="fas fa-qrcode"></i>
+                            </div>
+                            <h4>QR Code</h4>
+                            <p>Scansiona con il telefono per aprire velocemente:</p>
+                            <div class="qr-container">
+                                <div class="qr-code" id="alt-qr-code">
+                                    <!-- QR Code will be generated here -->
+                                </div>
+                                <button onclick="downloadQR()" class="btn-download-qr">
+                                    <i class="fas fa-download"></i>
+                                    Scarica QR
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="method-card">
+                            <div class="method-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <h4>URL Corto</h4>
+                            <p>Condividi questo link breve:</p>
+                            <div class="short-url-container">
+                                <div class="short-url" id="short-url">myapp.site/tv</div>
+                                <button onclick="copyShortUrl()" class="btn-copy-short">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <small>Reindirizza automaticamente al codice più recente</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usage Statistics -->
+                <div class="usage-stats">
+                    <h3><i class="fas fa-chart-bar"></i> Statistiche d'Uso</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="total-codes">--</div>
+                            <div class="stat-label">Codici Generati Oggi</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="success-rate">--%</div>
+                            <div class="stat-label">Tasso di Successo</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="avg-time">--s</div>
+                            <div class="stat-label">Tempo Medio Risposta</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="active-codes">--</div>
+                            <div class="stat-label">Codici Attivi</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Ads -->
+                <div class="bottom-ads-section">
+                    <div class="ads-grid-bottom">
+                        <div class="ad-placeholder loading">
+                            <div class="ad-content">
+                                <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                <span class="ad-size">300x250 - Bottom 1</span>
+                            </div>
+                            <!-- INSERISCI QUI CODICE RECTANGLE BOTTOM 1 -->
+                        </div>
+                        <div class="ad-placeholder loading">
+                            <div class="ad-content">
+                                <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                <span class="ad-size">300x250 - Bottom 2</span>
+                            </div>
+                            <!-- INSERISCI QUI CODICE RECTANGLE BOTTOM 2 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help Section -->
+            <div class="help-section">
+                <h3><i class="fas fa-question-circle"></i> Come Usare i Codici</h3>
+                <div class="help-content">
+                    <div class="help-step">
+                        <div class="help-number">1</div>
+                        <div class="help-text">
+                            <h4>Scegli un Codice</h4>
+                            <p>Seleziona uno dei codici disponibili dalla lista sopra</p>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <div class="help-number">2</div>
+                        <div class="help-text">
+                            <h4>Copia il Codice</h4>
+                            <p>Clicca "Copia" o memorizza il codice a 5 cifre</p>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <div class="help-number">3</div>
+                        <div class="help-text">
+                            <h4>Usa nell'App Downloader</h4>
+                            <p>Apri Downloader su FireStick/TV e inserisci il codice</p>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <div class="help-number">4</div>
+                        <div class="help-text">
+                            <h4>Download e Installa</h4>
+                            <p>Premi Download e poi Installa quando completato</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="help-links">
+                    <a href="instructions.html" class="help-link">
+                        <i class="fas fa-book"></i>
+                        Guida Dettagliata
+                    </a>
+                    <a href="firestick-code.html" class="help-link">
+                        <i class="fas fa-magic"></i>
+                        Generatore Automatico
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sticky Ad Footer -->
+    <div id="sticky-ad-footer" class="sticky-ad-alt">
+        <div class="ad-placeholder">
+            <span><i class="fas fa-ad"></i> PUBBLICITÀ</span>
+            <button class="ad-close" onclick="closeStickyAd()">&times;</button>
+            <!-- INSERISCI QUI CODICE STICKY AD -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="alt-codes-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Codici Alternativi</h4>
+                    <p>Sistema di backup per garantire sempre l'accesso ai codici Downloader</p>
+                    <div class="system-status">
+                        <div class="status-indicator online">
+                            <span class="status-dot"></span>
+                            Sistema Online
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Link Utili</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="firestick-code.html">Generatore Principale</a></li>
+                        <li><a href="download-android.html">Download Android</a></li>
+                        <li><a href="instructions.html">Istruzioni Complete</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Supporto</h4>
+                    <ul>
+                        <li><a href="#help-section">FAQ</a></li>
+                        <li><a href="mailto:support@miaapp.com">Contattaci</a></li>
+                        <li><a href="#troubleshooting">Risoluzione Problemi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MiaApp. Sistema di codici sicuro e affidabile.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.3/qrcode.min.js"></script>
+    <script src="assets/js/ads-monetization.js"></script>
+    <script src="assets/js/code-manager.js"></script>
+    <script src="assets/js/alt-codes.js"></script>
+    
+    <script>
+        // Pre-generated codes database (rotated every hour)
+        const preGeneratedCodes = [
+            { code: '45789', generated: Date.now(), expires: Date.now() + 3600000, status: 'active' },
+            { code: '23456', generated: Date.now() - 300000, expires: Date.now() + 3300000, status: 'active' },
+            { code: '67890', generated: Date.now() - 600000, expires: Date.now() + 3000000, status: 'active' },
+            { code: '34567', generated: Date.now() - 900000, expires: Date.now() + 2700000, status: 'active' },
+            { code: '78901', generated: Date.now() - 1200000, expires: Date.now() + 2400000, status: 'active' }
+        ];
+
+        // Initialize alternative codes page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for AdBlock
+            setTimeout(checkAdBlock, 1000);
+            
+            // Start ad countdown
+            if (!isAdBlockDetected()) {
+                startAdCountdown();
+            }
+            
+            // Initialize codes system
+            initializeCodesSystem();
+            
+            // Update timestamps
+            updateTimestamps();
+            
+            // Track page view
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    page_title: 'Alternative Codes',
+                    page_location: window.location.href
+                });
+            }
+        });
+
+        // Auto-update codes every hour
+        setInterval(function() {
+            refreshCodes();
+            updateTimestamps();
+        }, 3600000); // 1 hour
+
+        // Update UI every minute
+        setInterval(updateTimestamps, 60000);
+    </script>
+</body>
+</html>

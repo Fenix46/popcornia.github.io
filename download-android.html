@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download APK Android - MiaApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/download.css">
+</head>
+<body class="download-page">
+    <!-- Anti-AdBlock Detection -->
+    <div id="adb-overlay" class="adb-overlay hidden">
+        <div class="adb-content">
+            <i class="fas fa-shield-alt"></i>
+            <h2>AdBlock Rilevato</h2>
+            <p>Per scaricare gratuitamente l'app, ti chiediamo di disabilitare AdBlock per questo sito.</p>
+            <p>Questo ci aiuta a mantenere il servizio gratuito per tutti.</p>
+            <button onclick="checkAdBlock()" class="btn btn-primary">Ho Disabilitato AdBlock</button>
+        </div>
+    </div>
+
+    <!-- Top Ad Banner -->
+    <div id="top-ad-banner-1" class="ad-banner-large">
+        <div class="ad-placeholder loading">
+            <div class="ad-content">
+                <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                <span class="ad-size">728x90 - Banner</span>
+            </div>
+            <!-- INSERISCI QUI IL CODICE BANNER 728x90 -->
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="download-header">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Torna alla Home
+            </a>
+            <div class="header-content">
+                <div class="app-info">
+                    <div class="app-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div class="app-details">
+                        <h1>MiaApp per Android</h1>
+                        <div class="app-meta">
+                            <span><i class="fas fa-download"></i> Download Diretto APK</span>
+                            <span><i class="fas fa-shield-check"></i> Sicuro e Verificato</span>
+                            <span><i class="fas fa-mobile-alt"></i> Compatibile Android 5.0+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="download-main">
+        <div class="container">
+            <!-- Pre-Download Ad Section -->
+            <div id="pre-download-ads" class="ad-section">
+                <h2><i class="fas fa-clock"></i> Preparazione Download...</h2>
+                <p>Il tuo download inizierà automaticamente tra <span id="countdown">15</span> secondi</p>
+                
+                <!-- Multiple Ad Placements -->
+                <div class="ads-grid">
+                    <div class="ad-rectangle-1">
+                        <div class="ad-placeholder loading">
+                            <div class="ad-content">
+                                <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                <span class="ad-size">300x250 - Rectangle 1</span>
+                            </div>
+                            <!-- INSERISCI QUI CODICE RECTANGLE 300x250 #1 -->
+                        </div>
+                    </div>
+                    
+                    <div class="ad-rectangle-2">
+                        <div class="ad-placeholder loading">
+                            <div class="ad-content">
+                                <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                                <span class="ad-size">300x250 - Rectangle 2</span>
+                            </div>
+                            <!-- INSERISCI QUI CODICE RECTANGLE 300x250 #2 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Countdown Timer -->
+                <div class="countdown-container">
+                    <div class="countdown-circle">
+                        <div class="countdown-number" id="countdown-display">15</div>
+                        <svg class="countdown-svg">
+                            <circle cx="75" cy="75" r="70" id="countdown-path"></circle>
+                        </svg>
+                    </div>
+                    <div class="countdown-text">
+                        <h3>Download in corso...</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <p id="countdown-message">Attendi per favore, stiamo preparando il tuo file APK</p>
+                    </div>
+                </div>
+
+                <!-- Video Ad (Optional) -->
+                <div class="video-ad-container">
+                    <h4><i class="fas fa-video"></i> Download Istantaneo (Opzionale)</h4>
+                    <p>Guarda questo breve video per ottenere il download immediato</p>
+                    <div class="video-ad-placeholder">
+                        <div class="ad-placeholder">
+                            <p><i class="fas fa-play"></i> VIDEO AD</p>
+                            <span>Guarda per skip countdown</span>
+                            <!-- INSERISCI QUI CODICE VIDEO AD -->
+                        </div>
+                    </div>
+                    <button onclick="watchVideoAd()" class="btn btn-video">
+                        <i class="fas fa-play"></i>
+                        Guarda Video (Skip Timer)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Download Ready Section (Hidden initially) -->
+            <div id="download-ready" class="download-ready hidden">
+                <div class="download-success">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Download Pronto!</h2>
+                    <p>Il tuo file APK è pronto per il download</p>
+                    
+                    <div class="download-button-container">
+                        <a href="downloads/app.apk" id="download-link" class="btn-download" download="MiaApp.apk">
+                            <i class="fas fa-download"></i>
+                            <span>Scarica APK Ora</span>
+                            <small>MiaApp.apk - 25.6 MB</small>
+                        </a>
+                    </div>
+
+                    <!-- Additional Ad After Download Button -->
+                    <div class="post-download-ad">
+                        <div class="ad-placeholder">
+                            <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                            <span class="ad-size">728x90 - Post Download</span>
+                            <!-- INSERISCI QUI CODICE BANNER POST-DOWNLOAD -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Installation Instructions -->
+            <div class="installation-guide">
+                <h2><i class="fas fa-info-circle"></i> Come Installare su Android</h2>
+                
+                <div class="instruction-steps">
+                    <div class="instruction-step">
+                        <div class="step-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>1. Scarica l'APK</h3>
+                            <p>Tocca il pulsante "Scarica APK Ora" qui sopra. Il file verrà salvato nella cartella Download del tuo dispositivo.</p>
+                        </div>
+                    </div>
+
+                    <div class="instruction-step">
+                        <div class="step-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>2. Abilita Sorgenti Sconosciute</h3>
+                            <p>Vai in <strong>Impostazioni → Sicurezza → Sorgenti Sconosciute</strong> e attiva l'opzione. Questo permette l'installazione di app esterne al Play Store.</p>
+                            <div class="settings-path">
+                                <span class="path-step">Impostazioni</span>
+                                <i class="fas fa-chevron-right"></i>
+                                <span class="path-step">Sicurezza</span>
+                                <i class="fas fa-chevron-right"></i>
+                                <span class="path-step">Sorgenti Sconosciute</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instruction-step">
+                        <div class="step-icon">
+                            <i class="fas fa-folder-open"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>3. Trova il File APK</h3>
+                            <p>Apri l'app File Manager e naviga nella cartella <strong>Download</strong>. Troverai il file <strong>MiaApp.apk</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="instruction-step">
+                        <div class="step-icon">
+                            <i class="fas fa-mouse-pointer"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>4. Installa l'APK</h3>
+                            <p>Tocca il file APK e premi <strong>"Installa"</strong>. Attendi qualche secondo per completare l'installazione.</p>
+                        </div>
+                    </div>
+
+                    <div class="instruction-step">
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>5. Avvia l'App</h3>
+                            <p>Una volta installata, troverai l'icona di MiaApp nella schermata home. Tocca per avviare!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting Section -->
+                <div class="troubleshooting">
+                    <h3><i class="fas fa-tools"></i> Risoluzione Problemi</h3>
+                    <div class="trouble-items">
+                        <div class="trouble-item">
+                            <h4><i class="fas fa-exclamation-triangle"></i> "Installazione bloccata"</h4>
+                            <p>Assicurati di aver abilitato "Sorgenti Sconosciute" nelle impostazioni di sicurezza.</p>
+                        </div>
+                        <div class="trouble-item">
+                            <h4><i class="fas fa-times-circle"></i> "App non installata"</h4>
+                            <p>Potrebbero esserci versioni precedenti. Vai in Impostazioni → App e disinstalla versioni precedenti di MiaApp.</p>
+                        </div>
+                        <div class="trouble-item">
+                            <h4><i class="fas fa-mobile-alt"></i> "File APK corrotto"</h4>
+                            <p>Riprova a scaricare il file. Assicurati di avere una connessione internet stabile durante il download.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Ads -->
+            <div class="bottom-ads">
+                <div class="ad-placeholder loading">
+                    <p><i class="fas fa-ad"></i> PUBBLICITÀ</p>
+                    <span class="ad-size">728x90 - Bottom Banner</span>
+                    <!-- INSERISCI QUI CODICE BOTTOM BANNER -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sticky Ad Footer -->
+    <div id="sticky-ad-footer" class="sticky-ad-download">
+        <div class="ad-placeholder">
+            <span><i class="fas fa-ad"></i> PUBBLICITÀ</span>
+            <button class="ad-close" onclick="closeStickyAd()">&times;</button>
+            <!-- INSERISCI QUI CODICE STICKY AD -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="download-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">← Torna alla Home</a>
+                <a href="firestick-code.html">Codice per FireStick</a>
+                <a href="instructions.html">Istruzioni Dettagliate</a>
+            </div>
+            <p>&copy; 2024 MiaApp. Download sicuro e gratuito.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/ads-monetization.js"></script>
+    <script src="assets/js/download-android.js"></script>
+    
+    <script>
+        // Initialize download page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for AdBlock
+            setTimeout(checkAdBlock, 1000);
+            
+            // Start countdown if no AdBlock
+            if (!isAdBlockDetected()) {
+                startDownloadCountdown();
+            }
+            
+            // Track page views for analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    page_title: 'Android APK Download',
+                    page_location: window.location.href
+                });
+            }
+        });
+    </script>
+</body>
+</html>
