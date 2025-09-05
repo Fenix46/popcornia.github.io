@@ -9,7 +9,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: #333;
-    background: #0f0f23;
+    background: linear-gradient(135deg, #000000 0%, #1a0a0a 50%, #2d1810 100%);
     overflow-x: hidden;
 }
 
@@ -19,18 +19,21 @@ body {
     padding: 0 20px;
 }
 
-/* Gradients and Colors */
+/* Popcornia Colors - Black, Red, Orange Theme */
 :root {
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    --tv-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    --card-bg: rgba(255, 255, 255, 0.1);
+    --primary-gradient: linear-gradient(135deg, #ff4500 0%, #ff6b35 100%); /* Orange gradient */
+    --secondary-gradient: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); /* Red gradient */
+    --success-gradient: linear-gradient(135deg, #f97316 0%, #fb923c 100%); /* Orange success */
+    --dark-gradient: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%); /* Dark gradient */
+    --tv-bg: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d1810 100%); /* Black to dark orange */
+    --card-bg: rgba(255, 69, 0, 0.15); /* Orange tinted cards */
     --text-light: #ffffff;
-    --text-dark: #333333;
+    --text-dark: #1f1f1f;
+    --accent-orange: #ff4500; /* Popcornia orange */
+    --accent-red: #dc2626; /* Popcornia red */
+    --accent-dark: #1f1f1f; /* Popcornia black */
     --border-radius: 15px;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Ad Styles */
